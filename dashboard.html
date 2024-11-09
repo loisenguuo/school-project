@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Overview Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .dashboard-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .dashboard-header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+
+        section {
+            margin: 15px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .activity-list {
+            list-style-type: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>Asset Overview</h1>
+        </header>
+
+        <section class="asset-value">
+            <h2>Asset Value</h2>
+            <p>Total Assets: 100</p>
+            <p>Estimated Asset Value: $500,000</p>
+        </section>
+
+        <section class="recent-activity">
+            <h2>Recent Activity</h2>
+            <ul class="activity-list">
+                <li>Asset 1: Updated on 10/01/2024</li>
+                <li>Asset 2: Added on 10/05/2024</li>
+                <li>Asset 3: Deleted on 10/10/2024</li>
+            </ul>
+        </section>
+
+        <section class="upcoming-maintenance">
+            <h2>Upcoming Maintenance</h2>
+            <p>No upcoming maintenance scheduled.</p>
+        </section>
+    </div>
+
+    <script>
+        // JavaScript can be added here for functionality
+        console.log("Dashboard loaded.");
+    </script>
+</body>
+</html>

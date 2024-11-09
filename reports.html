@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports and Analysis</title>
+    <link rel="stylesheet" href="assets.css"> <!-- Link to common CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .report-section {
+            margin-top: 20px;
+        }
+
+        .filter-section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Reports and Analysis</h2>
+
+        <div class="filter-section">
+            <label for="statusFilter">Filter by Status:</label>
+            <select id="statusFilter">
+                <option value="all">All</option>
+                <option value="active">Active</option>
+                <option value="under maintenance">Under Maintenance</option>
+                <option value="inactive">Inactive</option>
+            </select>
+            <button id="filterButton">Filter</button>
+        </div>
+
+        <div class="report-section">
+            <h3>Asset Overview</h3>
+            <p>Total Assets: <span id="totalAssets">0</span></p>
+            <p>Total Value: $<span id="totalValue">0</span></p>
+        </div>
+
+        <div class="report-section">
+            <h3>Maintenance Reports</h3>
+            <table id="maintenanceTable">
+                <thead>
+                    <tr>
+                        <th>Asset Name</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Maintenance records will be injected here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="report-section">
+            <h3>Recent Activity</h3>
+            <table id="activityTable">
+                <thead>
+                    <tr>
+                        <th>Action</th>
+                        <th>Asset Name</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Recent activity records will be injected here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="reports-and-analysis.js"></script>
+</body>
+</html>

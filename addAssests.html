@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Recorder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Asset Recorder</h1>
+        <form id="asset-form">
+            <label for="item-name">Item Name:</label>
+            <input type="text" id="item-name" required>
+
+            <label for="item-category">Category:</label>
+            <input type="text" id="item-category" required>
+
+            <label for="item-quantity">Quantity:</label>
+            <input type="number" id="item-quantity" required>
+
+            <label for="item-value">Value:</label>
+            <input type="number" id="item-value" step="0.01" required>
+
+            <button type="button" id="add-item-button">Add Item</button>
+        </form>
+
+        <h2>Recorded Assets</h2>
+        <ul id="assets-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

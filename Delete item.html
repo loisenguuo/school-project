@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Asset</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .asset-item {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .delete-button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .delete-button:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Delete Asset</h2>
+
+        <h3>Assets</h3>
+        <ul id="assetList"></ul>
+    </div>
+
+    <script>
+        let assets = [];
+
+        // Function to render the asset list
+        function renderAssets() {
+            const assetList = document.getElementById('assetList');
+            assetList.innerHTML = '';
+
+            assets.forEach((asset, index) => {
+                const li = document.createElement('li');
+                li.className = 'asset-item';
+                li.innerHTML = `${asset.name} - $${asset.value} 
+                <button class="delete-button" onclick="deleteAsset(${index})">Delete</button>`;
+                assetList.appendChild(li);
+            });
+        }
+
+        // Function to delete an asset
+        function deleteAsset(index) {
+            assets.splice(index, 1);
+            renderAssets();
+        }
+
+        // Adding some dummy assets for testing
+        assets.push({ name: 'Asset 1', value: '1000' });
+        assets.push({ name: 'Asset 2', value: '2000' });
+        assets.push({ name: 'Asset 3', value: '3000' });
+        
+        // Initial rendering of assets
+        renderAssets();
+    </script>
+</body>
+</html>

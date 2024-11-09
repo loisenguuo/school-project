@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Overview</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h3>Asset Overview</h3>
+        <p>Total Assets: <span id="total-assets">--</span></p>
+        <p>Active Assets: <span id="active-assets">--</span></p>
+        <p>Inactive Assets: <span id="inactive-assets">--</span></p>
+    </div>
+
+    <script>
+        // Sample data
+        const assetOverview = {
+            total: 150,
+            active: 120,
+            inactive: 30
+        };
+
+        // Populate data
+        document.getElementById('total-assets').textContent = assetOverview.total;
+        document.getElementById('active-assets').textContent = assetOverview.active;
+        document.getElementById('inactive-assets').textContent = assetOverview.inactive;
+    </script>
+
+</body>
+</html>

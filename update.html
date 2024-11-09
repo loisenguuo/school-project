@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Asset</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Update Asset</h2>
+
+        <!-- Form to Update an Asset -->
+        <form id="updateForm">
+            <input type="text" id="assetName" placeholder="Asset Name" required>
+            <input type="text" id="assetValue" placeholder="Asset Value" required>
+            <button type="submit">Update Asset</button>
+        </form>
+
+        <h3>Assets</h3>
+        <ul id="assetList"></ul>
+    </div>
+
+    <script>
+        let assets = [];
+        let currentIndex = null;
+
+        // Function to render the asset list
+        function renderAssets() {
+            const assetList = document.getElementById('assetList');
+            assetList.innerHTML = '';
+
+            assets.forEach((asset, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `${asset.name} - $${asset.value} 
+                <button onclick="editAsset(${index})">Edit</button>`;
+                assetList.appendChild(li);
+            });
+        }
+
+        // Update Asset
+        document.getElementById('updateForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const assetName = document.getElementById('assetName').value;
+            const assetValue = document.getElementById('assetValue').value;
+
+            if (currentIndex === null) {
+                // Adding a new asset
+                assets.push({ name: assetName, value: assetValue });
+            } else {
+                // Updating an existing asset
+                assets[currentIndex] = { name: assetName, value: assetValue };
+                currentIndex = null; // Reset index after updating
+            }
+
+            // Clear the form fields
+            document.getElementById('assetName').value = '';
+            document.getElementById('assetValue').value = '';
+            
+            // Re-render the asset list
+            renderAssets();
+        });
+
+        // Function to edit an asset
+        function editAsset(index) {
+            currentIndex = index;
+            document.getElementById('assetName').value = assets[index].name;
+            document.getElementById('assetValue').value = assets[index].value;
+        }
+    </script>
+</body>
+</html>

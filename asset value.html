@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Value</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h3>Asset Value</h3>
+        <p>Total Value: $<span id="total-value">--</span></p>
+        <p>Most Valuable Category: <span id="valuable-category">--</span></p>
+        <p>Depreciation Rate: <span id="depreciation-rate">--</span></p>
+    </div>
+
+    <script>
+        // Sample data
+        const assetValue = {
+            totalValue: 500000,
+            valuableCategory: "Machinery",
+            depreciationRate: "5% per year"
+        };
+
+        // Populate data
+        document.getElementById('total-value').textContent = assetValue.totalValue;
+        document.getElementById('valuable-category').textContent = assetValue.valuableCategory;
+        document.getElementById('depreciation-rate').textContent = assetValue.depreciationRate;
+    </script>
+
+</body>
+</html>
